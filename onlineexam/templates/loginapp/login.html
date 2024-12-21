@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 100px;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+</style>
+</head>
+
+<form>
+        
+    {% csrf_token %}
+    
+    
+    <input type="text" name="username" placeholder="enter username"> <br><br>
+
+    <input type="password" name="password" placeholder="enter password"> <br><br>
+
+
+    <input type="submit" value="sign in" formaction="/loginapp/login/" formmethod="post">
+    
+    <input type="submit" value="sign up" formaction="/loginapp/saveUser/" formmethod="get">
+    
+    
+</form>
+
+<span style="color: red;">  {{message}} </span>

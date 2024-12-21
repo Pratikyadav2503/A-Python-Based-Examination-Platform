@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+            table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+{% for pageno in listofint %}
+
+        <a href="/examapp/search/{{pageno}}"> {{pageno}} </a>
+    
+{% endfor %}
+
+
+<table>
+
+    <tr>
+     <th>username</th>
+     <th>subject</th>
+     <th>score</th>
+     
+   </tr>
+ 
+     {% for result in results %}
+ 
+         <tr>
+                 <td> {{result.username}} </td>
+                 <td> {{result.subject}} </td>
+                 <td> {{result.score}} </td>
+                 
+ 
+         </tr>
+ 
+     {% endfor %}
+ 
+ </table>
+
+<a href="/examapp/giveMePage3"> go to admin dashboard </a>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<head>
+
+    {% load static %}
+    
+</head>
+<html>
+<head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 10;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+</style>
+</head>
+<form>
+
+    <select name="subject">
+           
+        {% for dictionary in listofdictionary%}
+
+            {% for key,value in dictionary.items %}
+
+                <option>{{value}}</option>
+
+            {% endfor %}
+        
+        {% endfor %}
+               
+
+    </select>
+
+    <br><br>
+
+    <img src="{% static imagepath %}" width="100" height="100">
+
+
+   
+    <input type="submit" value="starttest" formaction="/examapp/startTest/" formmethod="get">
+    
+</form>

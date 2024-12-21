@@ -1,0 +1,72 @@
+<html>
+<head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 1000px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+form input[type="submit"] {
+    width:100px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<form>
+
+    <input type="text" name="qno" value="{{question.qno}}"> <br><br>
+            
+    <input type="text" name="qtext" value="{{question.qtext}}"><br><br>
+    
+    <input type="hidden" name="answer" value="{{question.answer}}"><br>
+    
+    <input type="radio" name="op" value="{{question.op1}}" {% if previousanswer == question.op1 %} checked {% endif %}> <span> {{question.op1}} </span>
+    
+    <input type="radio" name="op" value="{{question.op2}}" {% if previousanswer == question.op2 %} checked {% endif %}> <span> {{question.op2}} </span>
+    
+    <input type="radio" name="op" value="{{question.op3}}" {% if previousanswer == question.op3 %} checked {% endif %}> <span> {{question.op3}} </span>
+    
+    <input type="radio" name="op" value="{{question.op4}}" {% if previousanswer == question.op4 %} checked {% endif %}> <span> {{question.op4}} </span>
+    
+    <br><br>
+    
+    <input type="submit" value="next" formaction="/examapp/nextQuestion/"> 
+    
+    <input type="submit" value="previous" formaction="/examapp/previousQuestion/"> 
+    
+    <input type="submit" value="endexam" formaction="/examapp/endexam/">
+    
+</form>
+    
+    
+    
+    <span style="color: red;">  {{message}} </span>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 10;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+</style>
+</head>
+
+<form enctype="multipart/form-data">
+
+    {% csrf_token %}
+    
+    <input type="text" name="username" placeholder="enter username"> <br><br>
+
+    <input type="password" name="password" placeholder="enter password"> <br><br>
+
+    <input type="email" name="email" placeholder="enter email"> <br><br>
+
+    <input type="file" name="photo"><br><br>
+
+    <input type="submit" value="register" formaction="/loginapp/saveUser/" formmethod="post">
+
+</form>

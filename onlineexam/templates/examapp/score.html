@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+            table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+span[style="color: red;"] {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+</style>
+</head>
+
+
+
+
+
+
+
+<span style="color: red; font-size: large;"> {{username}} , your score is {{score}} </span>
+
+<body>
+<table>
+
+   <tr>
+    <th>Qno</th>
+    <th>Question</th>
+    <th>Correct Answer</th>
+    <th>Submitted Answer</th>
+  </tr>
+
+    {% for list in listoflist %}
+
+        <tr>
+                <td> {{list.0}} </td>
+                <td> {{list.1}} </td>
+                <td> {{list.2}} </td>
+                <td> {{list.3}} </td>
+
+        </tr>
+
+    {% endfor %}
+
+</table>
+</body>
+</html>
+    
